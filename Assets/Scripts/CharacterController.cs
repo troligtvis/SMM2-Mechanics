@@ -45,10 +45,11 @@ public class CharacterController : MonoBehaviour
 
     private void UpdateFacingDirection(bool isFacingLeft)
     {
-        _spriteRenderer.flipX = isFacingLeft;
-        var offset = _boxCollider2D.offset;
-        const float offsetX = 0.19f;
-        _boxCollider2D.offset = new Vector2(isFacingLeft ? offsetX : -offsetX,  offset.y);
+        var localScale = transform.localScale;
+        localScale.x = isFacingLeft ? -1f : 1f;
+        transform.localScale = localScale;
+        
+        
     }
 
     private void ListenForInput()
