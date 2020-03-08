@@ -8,8 +8,8 @@ namespace Door_System
     
         public static event OnBeginUpdatePosition onBeginUpdatePawnPosition;
 
-        public Door doorA;
-        public Door doorB;
+        [SerializeField] private Door doorA;
+        [SerializeField] private Door doorB;
 
         private void Awake()
         {
